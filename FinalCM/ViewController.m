@@ -9,19 +9,130 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+{
+    //Web Strings
+    NSString *webStringGameList;
+    
+    NSURLConnection *connection;
+    NSMutableData *webData;
+}
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated
+{
+    webStringGameList = @"http://www.serverbpw.com/cm/2016-1/list.php";
+    NSURL *url = [NSURL URLWithString:webStringGameList];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    if(connection)
+        webData = [[NSMutableData alloc] init];
 }
 
+#pragma mark Connection Delegate
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [webData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"webData: %@", webData);
+    NSLog(@"Success!");
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"Ups! hubo un error");
+}
+
+- (IBAction)getDataTest:(UIButton *)sender
+{
+    
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

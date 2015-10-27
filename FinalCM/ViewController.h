@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <NSURLConnectionDataDelegate>
 
+- (IBAction)getDataTest:(UIButton *)sender;
 
 @end
 
