@@ -15,6 +15,8 @@
     
     NSURLConnection *connection;
     NSMutableData *webData;
+    
+    NSXMLParser *xmlParser;
 }
 
 @end
@@ -44,13 +46,20 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSLog(@"webData: %@", webData);
-    NSLog(@"Success!");
+    xmlParser = [[NSXMLParser alloc] initWithData:webData];
+    [xmlParser setDelegate:self];
+    [xmlParser parse];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSLog(@"Ups! hubo un error");
+}
+
+#pragma mark XMLParser Delegate
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict
+{
+    NSLog(@"element name: %@", elementName);
 }
 
 - (IBAction)getDataTest:(UIButton *)sender
