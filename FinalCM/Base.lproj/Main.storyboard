@@ -36,10 +36,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Lista Juegos View Controller-->
         <scene sceneID="Qu6-Dj-gIk">
             <objects>
-                <viewController id="6Kf-80-iUL" sceneMemberID="viewController">
+                <viewController id="6Kf-80-iUL" customClass="ListaJuegosViewController" customModule="FinalCM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IBB-8O-Oiq"/>
                         <viewControllerLayoutGuide type="bottom" id="7IT-2b-r69"/>
@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="2020" y="1352"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="4xv-UC-gXz">
             <objects>
-                <viewController id="zIM-MC-9kS" sceneMemberID="viewController">
+                <viewController id="zIM-MC-9kS" customClass="MapViewController" customModule="FinalCM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gvc-no-0r2"/>
                         <viewControllerLayoutGuide type="bottom" id="QUp-1w-e43"/>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="2020" y="2016"/>
         </scene>
-        <!--View Controller-->
+        <!--Ahorcado View Controller-->
         <scene sceneID="ORa-Dq-xbk">
             <objects>
-                <viewController id="BJv-xF-iwo" sceneMemberID="viewController">
+                <viewController id="BJv-xF-iwo" customClass="AhorcadoViewController" customModule="FinalCM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eq0-Gs-UuJ"/>
                         <viewControllerLayoutGuide type="bottom" id="3Kf-tx-DLI"/>
@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="2020" y="2688"/>
         </scene>
-        <!--View Controller-->
+        <!--Scanner View Controller-->
         <scene sceneID="90o-61-zZs">
             <objects>
-                <viewController id="PGG-lj-Y7s" sceneMemberID="viewController">
+                <viewController id="PGG-lj-Y7s" customClass="ScannerViewController" customModule="FinalCM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="77U-zT-rfH"/>
                         <viewControllerLayoutGuide type="bottom" id="x1F-HA-Lgd"/>

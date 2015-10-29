@@ -15,6 +15,10 @@
 		0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0751215D1BDFE5F000470227 /* LaunchScreen.storyboard */; };
 		0751216A1BDFE5F000470227 /* FinalCMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121691BDFE5F000470227 /* FinalCMTests.m */; };
 		075121751BDFE5F000470227 /* FinalCMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121741BDFE5F000470227 /* FinalCMUITests.m */; };
+		A91C1F761BE009A2003EF2FB /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */; };
+		A91C1F781BE00C5F003EF2FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F771BE00C5F003EF2FB /* MapViewController.swift */; };
+		A91C1F7A1BE00C92003EF2FB /* ListaJuegosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */; };
+		A91C1F7C1BE00CAF003EF2FB /* AhorcadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,11 @@
 		075121701BDFE5F000470227 /* FinalCMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalCMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075121741BDFE5F000470227 /* FinalCMUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinalCMUITests.m; sourceTree = "<group>"; };
 		075121761BDFE5F000470227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A91C1F741BE009A1003EF2FB /* FinalCM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinalCM-Bridging-Header.h"; sourceTree = "<group>"; };
+		A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		A91C1F771BE00C5F003EF2FB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaJuegosViewController.swift; sourceTree = "<group>"; };
+		A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AhorcadoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +110,10 @@
 		0751214E1BDFE5F000470227 /* FinalCM */ = {
 			isa = PBXGroup;
 			children = (
+				A91C1F771BE00C5F003EF2FB /* MapViewController.swift */,
+				A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */,
+				A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */,
+				A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */,
 				075121521BDFE5F000470227 /* AppDelegate.h */,
 				075121531BDFE5F000470227 /* AppDelegate.m */,
 				075121551BDFE5F000470227 /* ViewController.h */,
@@ -110,6 +123,7 @@
 				0751215D1BDFE5F000470227 /* LaunchScreen.storyboard */,
 				075121601BDFE5F000470227 /* Info.plist */,
 				0751214F1BDFE5F000470227 /* Supporting Files */,
+				A91C1F741BE009A1003EF2FB /* FinalCM-Bridging-Header.h */,
 			);
 			path = FinalCM;
 			sourceTree = "<group>";
@@ -202,6 +216,7 @@
 		075121441BDFE5F000470227 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Abner Castro Aguilar";
 				TargetAttributes = {
@@ -273,6 +288,10 @@
 				075121571BDFE5F000470227 /* ViewController.m in Sources */,
 				075121541BDFE5F000470227 /* AppDelegate.m in Sources */,
 				075121511BDFE5F000470227 /* main.m in Sources */,
+				A91C1F781BE00C5F003EF2FB /* MapViewController.swift in Sources */,
+				A91C1F7C1BE00CAF003EF2FB /* AhorcadoViewController.swift in Sources */,
+				A91C1F761BE009A2003EF2FB /* ScannerViewController.swift in Sources */,
+				A91C1F7A1BE00C92003EF2FB /* ListaJuegosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,10 +430,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FinalCM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = abner.FinalCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FinalCM/FinalCM-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -422,10 +444,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FinalCM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = abner.FinalCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FinalCM/FinalCM-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -496,6 +520,7 @@
 				0751217B1BDFE5F000470227 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0751217C1BDFE5F000470227 /* Build configuration list for PBXNativeTarget "FinalCMTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +529,7 @@
 				0751217E1BDFE5F000470227 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0751217F1BDFE5F000470227 /* Build configuration list for PBXNativeTarget "FinalCMUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +538,7 @@
 				075121811BDFE5F000470227 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
