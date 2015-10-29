@@ -19,6 +19,10 @@
 		A91C1F781BE00C5F003EF2FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F771BE00C5F003EF2FB /* MapViewController.swift */; };
 		A91C1F7A1BE00C92003EF2FB /* ListaJuegosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */; };
 		A91C1F7C1BE00CAF003EF2FB /* AhorcadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */; };
+		A93E4EF41BE28DE800626B82 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF31BE28DE800626B82 /* TesseractOCR.framework */; };
+		A93E4EF61BE28DFC00626B82 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF51BE28DFC00626B82 /* CoreImage.framework */; };
+		A93E4EF81BE28E0D00626B82 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF71BE28E0D00626B82 /* libstdc++.6.0.9.tbd */; };
+		A93E4EFA1BE28E2700626B82 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = A93E4EF91BE28E2700626B82 /* tessdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		A91C1F771BE00C5F003EF2FB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaJuegosViewController.swift; sourceTree = "<group>"; };
 		A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AhorcadoViewController.swift; sourceTree = "<group>"; };
+		A93E4EF31BE28DE800626B82 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		A93E4EF51BE28DFC00626B82 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		A93E4EF71BE28E0D00626B82 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		A93E4EF91BE28E2700626B82 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../../../Downloads/tessdata; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07850B461BE1C9FB00CEC9A4 /* libstdc++.6.0.9.tbd in Frameworks */,
-				07850B441BE1C9EF00CEC9A4 /* CoreImage.framework in Frameworks */,
-				07850B421BE1C9E000CEC9A4 /* TesseractOCR.framework in Frameworks */,
+				A93E4EF81BE28E0D00626B82 /* libstdc++.6.0.9.tbd in Frameworks */,
+				A93E4EF61BE28DFC00626B82 /* CoreImage.framework in Frameworks */,
+				A93E4EF41BE28DE800626B82 /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +122,7 @@
 		0751214E1BDFE5F000470227 /* FinalCM */ = {
 			isa = PBXGroup;
 			children = (
+				A93E4EF91BE28E2700626B82 /* tessdata */,
 				A91C1F771BE00C5F003EF2FB /* MapViewController.swift */,
 				A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */,
 				A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */,
@@ -161,9 +170,9 @@
 		07850B401BE1C9B300CEC9A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07850B451BE1C9FB00CEC9A4 /* libstdc++.6.0.9.tbd */,
-				07850B431BE1C9EF00CEC9A4 /* CoreImage.framework */,
-				07850B411BE1C9E000CEC9A4 /* TesseractOCR.framework */,
+				A93E4EF71BE28E0D00626B82 /* libstdc++.6.0.9.tbd */,
+				A93E4EF51BE28DFC00626B82 /* CoreImage.framework */,
+				A93E4EF31BE28DE800626B82 /* TesseractOCR.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,7 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */,
-				07850B3F1BE1C96300CEC9A4 /* tessdata in Resources */,
+				A93E4EFA1BE28E2700626B82 /* tessdata in Resources */,
 				0751215C1BDFE5F000470227 /* Assets.xcassets in Resources */,
 				0751215A1BDFE5F000470227 /* Main.storyboard in Resources */,
 			);
@@ -446,6 +455,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FinalCM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
@@ -461,6 +474,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FinalCM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
