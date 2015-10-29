@@ -15,6 +15,10 @@
 		0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0751215D1BDFE5F000470227 /* LaunchScreen.storyboard */; };
 		0751216A1BDFE5F000470227 /* FinalCMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121691BDFE5F000470227 /* FinalCMTests.m */; };
 		075121751BDFE5F000470227 /* FinalCMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121741BDFE5F000470227 /* FinalCMUITests.m */; };
+		07850B3F1BE1C96300CEC9A4 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 07850B3E1BE1C96300CEC9A4 /* tessdata */; };
+		07850B421BE1C9E000CEC9A4 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07850B411BE1C9E000CEC9A4 /* TesseractOCR.framework */; };
+		07850B441BE1C9EF00CEC9A4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07850B431BE1C9EF00CEC9A4 /* CoreImage.framework */; };
+		07850B461BE1C9FB00CEC9A4 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07850B451BE1C9FB00CEC9A4 /* libstdc++.6.0.9.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		075121701BDFE5F000470227 /* FinalCMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalCMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075121741BDFE5F000470227 /* FinalCMUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinalCMUITests.m; sourceTree = "<group>"; };
 		075121761BDFE5F000470227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07850B3E1BE1C96300CEC9A4 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = "../../../Downloads/OCR Tutorial Resources/Tesseract Resources/tessdata"; sourceTree = "<group>"; };
+		07850B411BE1C9E000CEC9A4 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		07850B431BE1C9EF00CEC9A4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		07850B451BE1C9FB00CEC9A4 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07850B461BE1C9FB00CEC9A4 /* libstdc++.6.0.9.tbd in Frameworks */,
+				07850B441BE1C9EF00CEC9A4 /* CoreImage.framework in Frameworks */,
+				07850B421BE1C9E000CEC9A4 /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				0751214E1BDFE5F000470227 /* FinalCM */,
+				07850B401BE1C9B300CEC9A4 /* Frameworks */,
 				075121681BDFE5F000470227 /* FinalCMTests */,
 				075121731BDFE5F000470227 /* FinalCMUITests */,
 				0751214D1BDFE5F000470227 /* Products */,
@@ -101,6 +113,7 @@
 		0751214E1BDFE5F000470227 /* FinalCM */ = {
 			isa = PBXGroup;
 			children = (
+				07850B3E1BE1C96300CEC9A4 /* tessdata */,
 				075121521BDFE5F000470227 /* AppDelegate.h */,
 				075121531BDFE5F000470227 /* AppDelegate.m */,
 				075121551BDFE5F000470227 /* ViewController.h */,
@@ -138,6 +151,16 @@
 				075121761BDFE5F000470227 /* Info.plist */,
 			);
 			path = FinalCMUITests;
+			sourceTree = "<group>";
+		};
+		07850B401BE1C9B300CEC9A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07850B451BE1C9FB00CEC9A4 /* libstdc++.6.0.9.tbd */,
+				07850B431BE1C9EF00CEC9A4 /* CoreImage.framework */,
+				07850B411BE1C9E000CEC9A4 /* TesseractOCR.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */,
+				07850B3F1BE1C96300CEC9A4 /* tessdata in Resources */,
 				0751215C1BDFE5F000470227 /* Assets.xcassets in Resources */,
 				0751215A1BDFE5F000470227 /* Main.storyboard in Resources */,
 			);
@@ -411,8 +435,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FinalCM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = abner.FinalCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -422,8 +451,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FinalCM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = abner.FinalCM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -496,6 +530,7 @@
 				0751217B1BDFE5F000470227 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0751217C1BDFE5F000470227 /* Build configuration list for PBXNativeTarget "FinalCMTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +539,7 @@
 				0751217E1BDFE5F000470227 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0751217F1BDFE5F000470227 /* Build configuration list for PBXNativeTarget "FinalCMUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +548,7 @@
 				075121811BDFE5F000470227 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
