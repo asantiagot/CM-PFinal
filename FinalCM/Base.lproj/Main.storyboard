@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -58,7 +59,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d62-hb-2mC" id="8Fr-Wj-IFb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -146,21 +147,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Escanea los códigos de barras que encuentres en las cajas de tus juegos de mesa favoritos. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-hC-nEL">
-                                <rect key="frame" x="104" y="257" width="392" height="85"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escanea los códigos de barras que encuentres en las cajas de tus juegos de mesa favoritos. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-hC-nEL">
+                                <rect key="frame" x="20" y="281" width="560" height="61"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="7dM-uu-vVS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1f-6l-ftg">
-                                <rect key="frame" x="243" y="350" width="114" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1f-6l-ftg">
+                                <rect key="frame" x="104" y="372" width="392" height="44"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="eoI-2s-fWq"/>
+                                </constraints>
                                 <state key="normal" title="ABRIR ESCÁNER"/>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d1f-6l-ftg" firstAttribute="top" secondItem="Cst-hC-nEL" secondAttribute="bottom" constant="30" id="AcF-et-wrJ"/>
+                            <constraint firstItem="Cst-hC-nEL" firstAttribute="top" secondItem="77U-zT-rfH" secondAttribute="bottom" constant="217" id="BPS-YE-aAD"/>
+                            <constraint firstItem="d1f-6l-ftg" firstAttribute="leading" secondItem="98j-8E-U2g" secondAttribute="leadingMargin" constant="84" id="BuP-so-PcI"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Cst-hC-nEL" secondAttribute="leading" id="M2D-A0-paX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cst-hC-nEL" secondAttribute="trailing" id="Uhv-2O-yle"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d1f-6l-ftg" secondAttribute="trailing" constant="84" id="nic-c5-zFK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bv7-SW-aOp"/>
                 </viewController>
