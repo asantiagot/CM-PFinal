@@ -57,9 +57,9 @@
 }
 
 #pragma mark XMLParser Delegate
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict
+-(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    NSLog(@"element name: %@", elementName);
+    NSLog(@"string: %@", string);
 }
 
 - (IBAction)getDataTest:(UIButton *)sender
