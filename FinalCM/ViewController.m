@@ -17,6 +17,7 @@
     NSMutableData *webData;
     
     NSXMLParser *xmlParser;
+    NSString *stringTest;
 }
 
 @end
@@ -57,9 +58,17 @@
 }
 
 #pragma mark XMLParser Delegate
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict
+{
+    if([elementName isEqualToString:@"key"])
+        stringTest = elementName;
+}
+
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    NSLog(@"string: %@", string);
+    if([stringTest isEqualToString:@"key"])
+        NSLog(@"string:%@", string);
+    NSLog(@"stringTest: %@", stringTest);
 }
 
 - (IBAction)getDataTest:(UIButton *)sender
