@@ -15,7 +15,6 @@
 		0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0751215D1BDFE5F000470227 /* LaunchScreen.storyboard */; };
 		0751216A1BDFE5F000470227 /* FinalCMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121691BDFE5F000470227 /* FinalCMTests.m */; };
 		075121751BDFE5F000470227 /* FinalCMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121741BDFE5F000470227 /* FinalCMUITests.m */; };
-		07768B7B1BE28FEE0077408E /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 07768B7A1BE28FEE0077408E /* tessdata */; };
 		07E0B8E51BE3F63700DE5594 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E0B8E41BE3F63700DE5594 /* MapKit.framework */; };
 		07E0B8E71BE3F7E700DE5594 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E0B8E61BE3F7E700DE5594 /* CoreLocation.framework */; };
 		A91C1F761BE009A2003EF2FB /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */; };
@@ -25,6 +24,7 @@
 		A93E4EF41BE28DE800626B82 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF31BE28DE800626B82 /* TesseractOCR.framework */; };
 		A93E4EF61BE28DFC00626B82 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF51BE28DFC00626B82 /* CoreImage.framework */; };
 		A93E4EF81BE28E0D00626B82 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF71BE28E0D00626B82 /* libstdc++.6.0.9.tbd */; };
+		A94CB2591BEF9AEC0038F940 /* AhorcadoXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94CB2581BEF9AEC0038F940 /* AhorcadoXMLParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,6 @@
 		075121701BDFE5F000470227 /* FinalCMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalCMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075121741BDFE5F000470227 /* FinalCMUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinalCMUITests.m; sourceTree = "<group>"; };
 		075121761BDFE5F000470227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07768B7A1BE28FEE0077408E /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = "../../../Downloads/OCR Tutorial Resources/Tesseract Resources/tessdata"; sourceTree = "<group>"; };
 		07E0B8E41BE3F63700DE5594 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		07E0B8E61BE3F7E700DE5594 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A91C1F741BE009A1003EF2FB /* FinalCM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinalCM-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		A93E4EF31BE28DE800626B82 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
 		A93E4EF51BE28DFC00626B82 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		A93E4EF71BE28E0D00626B82 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		A94CB2581BEF9AEC0038F940 /* AhorcadoXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AhorcadoXMLParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,11 +128,11 @@
 		0751214E1BDFE5F000470227 /* FinalCM */ = {
 			isa = PBXGroup;
 			children = (
-				07768B7A1BE28FEE0077408E /* tessdata */,
 				A91C1F771BE00C5F003EF2FB /* MapViewController.swift */,
 				A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */,
 				A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */,
 				A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */,
+				A94CB2581BEF9AEC0038F940 /* AhorcadoXMLParser.swift */,
 				075121521BDFE5F000470227 /* AppDelegate.h */,
 				075121531BDFE5F000470227 /* AppDelegate.m */,
 				075121551BDFE5F000470227 /* ViewController.h */,
@@ -290,7 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */,
-				07768B7B1BE28FEE0077408E /* tessdata in Resources */,
 				0751215C1BDFE5F000470227 /* Assets.xcassets in Resources */,
 				0751215A1BDFE5F000470227 /* Main.storyboard in Resources */,
 			);
@@ -318,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				075121571BDFE5F000470227 /* ViewController.m in Sources */,
+				A94CB2591BEF9AEC0038F940 /* AhorcadoXMLParser.swift in Sources */,
 				075121541BDFE5F000470227 /* AppDelegate.m in Sources */,
 				075121511BDFE5F000470227 /* main.m in Sources */,
 				A91C1F781BE00C5F003EF2FB /* MapViewController.swift in Sources */,
