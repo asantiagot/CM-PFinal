@@ -109,8 +109,9 @@ class AhorcadoViewController: UIViewController {
         
         super.viewDidLoad()
         self.navigationItem.title = "Ahorcado"
-        // displayWordHidden("prueba".uppercaseString)
+        displayWordHidden("cynthi".uppercaseString)
         
+        /*
         if ahorcadoXML.verifyValues() {
             fetchWords()
             if word != nil {
@@ -122,6 +123,7 @@ class AhorcadoViewController: UIViewController {
             print("Connection to the server could not be established.")
             // Cambiar este print, debe mostrar una alerta en la cual se diga que no se pudo establecer la conexión
         }
+*/
     }
     
     // MARK: ACTIONS
