@@ -18,8 +18,10 @@ class AhorcadoXMLParser: NSXMLParser, NSXMLParserDelegate {
     var element = NSString()
     var categoria = NSMutableString()
     var palabra = NSMutableString()
-
     
+    var finalCat = ""
+    var finalWord = ""
+
     // MARK: Methods
     
     func parseXML() {
@@ -31,10 +33,18 @@ class AhorcadoXMLParser: NSXMLParser, NSXMLParserDelegate {
         // tbData!.reloadData()  JUST IF TABLE VIEW IS USED
     }
     
+    func verifyValues() -> Bool {
+        var valueExists = false
+        parseXML()
+        if categoria.length != 0 && palabra.length != 0 {
+            valueExists = true
+        }
+        return valueExists
+    }
+    
     // MARK: XMLParser Methods
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String])
-    {
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         element = elementName
         
         // TODO: Search an alternative method to get both <string> content. This one is hardcoded.
@@ -45,18 +55,27 @@ class AhorcadoXMLParser: NSXMLParser, NSXMLParserDelegate {
             categoria = ""
         }
         
-        if (elementName as NSString).isEqualToString("string")
-        {
+        if (elementName as NSString).isEqualToString("string") {
             palabra = NSMutableString()
             palabra = ""
         }
-        
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
+        var catFinal = ""
         
         if element.isEqualToString("string") {
             categoria.appendString(string)
+            // print("MESSAGE FROM PARSER-- Categoria is: \(categoria)")
+            for letters in String(categoria).characters {
+                print("Value of catFinal is: \(catFinal)")
+                if letters != Character(UnicodeScalar(10)) {
+                    catFinal.append(letters)
+                } else {
+                    print ("Reached end of category")
+                }
+            }
+            print("Final value of catFinal is: \(catFinal)")
         }
         
         if element.isEqualToString("string") {
@@ -85,6 +104,4 @@ class AhorcadoXMLParser: NSXMLParser, NSXMLParserDelegate {
             posts.addObject(elements)
         }
     }
-    
-
 }

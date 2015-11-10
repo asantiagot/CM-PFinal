@@ -11,7 +11,6 @@
 		075121541BDFE5F000470227 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121531BDFE5F000470227 /* AppDelegate.m */; };
 		075121571BDFE5F000470227 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121561BDFE5F000470227 /* ViewController.m */; };
 		0751215A1BDFE5F000470227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075121581BDFE5F000470227 /* Main.storyboard */; };
-		0751215C1BDFE5F000470227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0751215B1BDFE5F000470227 /* Assets.xcassets */; };
 		0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0751215D1BDFE5F000470227 /* LaunchScreen.storyboard */; };
 		0751216A1BDFE5F000470227 /* FinalCMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121691BDFE5F000470227 /* FinalCMTests.m */; };
 		075121751BDFE5F000470227 /* FinalCMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121741BDFE5F000470227 /* FinalCMUITests.m */; };
@@ -24,7 +23,7 @@
 		A93E4EF61BE28DFC00626B82 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF51BE28DFC00626B82 /* CoreImage.framework */; };
 		A93E4EF81BE28E0D00626B82 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF71BE28E0D00626B82 /* libstdc++.6.0.9.tbd */; };
 		A94CB2591BEF9AEC0038F940 /* AhorcadoXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94CB2581BEF9AEC0038F940 /* AhorcadoXMLParser.swift */; };
-		A94CB25B1BEFE6210038F940 /* AhorcadoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94CB25A1BEFE6210038F940 /* AhorcadoModel.swift */; };
+		A9BA23131BF16B9E0099B6EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BA23121BF16B9E0099B6EE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		075121551BDFE5F000470227 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		075121561BDFE5F000470227 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		075121591BDFE5F000470227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0751215B1BDFE5F000470227 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0751215E1BDFE5F000470227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		075121601BDFE5F000470227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075121651BDFE5F000470227 /* FinalCMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalCMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +70,7 @@
 		A93E4EF51BE28DFC00626B82 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		A93E4EF71BE28E0D00626B82 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		A94CB2581BEF9AEC0038F940 /* AhorcadoXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AhorcadoXMLParser.swift; sourceTree = "<group>"; };
-		A94CB25A1BEFE6210038F940 /* AhorcadoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AhorcadoModel.swift; sourceTree = "<group>"; };
+		A9BA23121BF16B9E0099B6EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,18 +126,17 @@
 		0751214E1BDFE5F000470227 /* FinalCM */ = {
 			isa = PBXGroup;
 			children = (
+				A9BA23121BF16B9E0099B6EE /* Assets.xcassets */,
 				A91C1F771BE00C5F003EF2FB /* MapViewController.swift */,
 				A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */,
 				A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */,
 				A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */,
-				A94CB25A1BEFE6210038F940 /* AhorcadoModel.swift */,
 				A94CB2581BEF9AEC0038F940 /* AhorcadoXMLParser.swift */,
 				075121521BDFE5F000470227 /* AppDelegate.h */,
 				075121531BDFE5F000470227 /* AppDelegate.m */,
 				075121551BDFE5F000470227 /* ViewController.h */,
 				075121561BDFE5F000470227 /* ViewController.m */,
 				075121581BDFE5F000470227 /* Main.storyboard */,
-				0751215B1BDFE5F000470227 /* Assets.xcassets */,
 				0751215D1BDFE5F000470227 /* LaunchScreen.storyboard */,
 				075121601BDFE5F000470227 /* Info.plist */,
 				0751214F1BDFE5F000470227 /* Supporting Files */,
@@ -292,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */,
-				0751215C1BDFE5F000470227 /* Assets.xcassets in Resources */,
+				A9BA23131BF16B9E0099B6EE /* Assets.xcassets in Resources */,
 				0751215A1BDFE5F000470227 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +320,6 @@
 				075121541BDFE5F000470227 /* AppDelegate.m in Sources */,
 				075121511BDFE5F000470227 /* main.m in Sources */,
 				A91C1F781BE00C5F003EF2FB /* MapViewController.swift in Sources */,
-				A94CB25B1BEFE6210038F940 /* AhorcadoModel.swift in Sources */,
 				A91C1F7C1BE00CAF003EF2FB /* AhorcadoViewController.swift in Sources */,
 				A91C1F761BE009A2003EF2FB /* ScannerViewController.swift in Sources */,
 				A91C1F7A1BE00C92003EF2FB /* ListaJuegosViewController.swift in Sources */,
@@ -468,6 +464,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -490,6 +487,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
