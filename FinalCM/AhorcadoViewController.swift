@@ -29,8 +29,6 @@ class AhorcadoViewController: UIViewController {
     
     func fetchWords() {
         // Getting text for wordLabel and categoryLabel from Server
-        ahorcadoXML.parseXML()
-        
         if let strCat = Optional(ahorcadoXML.elements.objectForKey("CATEGORIA")) {
             print("Category found from XML is: \(String(strCat)) and its length is: \(String(strCat).characters.count)")
             category = String(strCat)
@@ -108,11 +106,11 @@ class AhorcadoViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.navigationItem.title = "Ahorcado"
-        displayWordHidden("prueba".uppercaseString)
+        // displayWordHidden("prueba".uppercaseString)
         
-        /*
         if ahorcadoXML.verifyValues() {
             fetchWords()
             if word != nil {
@@ -124,8 +122,6 @@ class AhorcadoViewController: UIViewController {
             print("Connection to the server could not be established.")
             // Cambiar este print, debe mostrar una alerta en la cual se diga que no se pudo establecer la conexión
         }
-        */
-        
     }
     
     // MARK: ACTIONS

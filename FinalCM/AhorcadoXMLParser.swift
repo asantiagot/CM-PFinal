@@ -33,9 +33,17 @@ class AhorcadoXMLParser: NSXMLParser, NSXMLParserDelegate {
         // tbData!.reloadData()  JUST IF TABLE VIEW IS USED
     }
     
+    /*
+    if let dict = try NSPropertyListSerialization.propertyListWithData("http://www.serverbpw.com/cm/2016-1/hangman.php", options: .Immutable, format: nil) as? NSDictionary {
+        let array = dict["PALABRA"] as? [String]
+        categoria = array?[0]
+        palabra = array?[1]
+    }
+    */
+    
     func verifyValues() -> Bool {
-        var valueExists = false
         parseXML()
+        var valueExists = false
         if categoria.length != 0 && palabra.length != 0 {
             valueExists = true
         }
@@ -62,25 +70,17 @@ class AhorcadoXMLParser: NSXMLParser, NSXMLParserDelegate {
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
-        var catFinal = ""
+
         
         if element.isEqualToString("string") {
             categoria.appendString(string)
             // print("MESSAGE FROM PARSER-- Categoria is: \(categoria)")
-            for letters in String(categoria).characters {
-                print("Value of catFinal is: \(catFinal)")
-                if letters != Character(UnicodeScalar(10)) {
-                    catFinal.append(letters)
-                } else {
-                    print ("Reached end of category")
-                }
-            }
-            print("Final value of catFinal is: \(catFinal)")
         }
         
         if element.isEqualToString("string") {
             palabra.appendString(string)
         }
+
         
         /*
         if element.isEqualToString("title") {
