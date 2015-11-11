@@ -20,7 +20,6 @@ class AhorcadoViewController: UIViewController {
     
     // MARK: OUTLETS
     
-    @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var aButton: UIButton!
     @IBOutlet weak var bButton: UIButton!
@@ -29,20 +28,19 @@ class AhorcadoViewController: UIViewController {
     
     func fetchWords() {
         // Getting text for wordLabel and categoryLabel from Server
-        if let strCat = Optional(ahorcadoXML.elements.objectForKey("CATEGORIA")) {
-            print("Category found from XML is: \(String(strCat)) and its length is: \(String(strCat).characters.count)")
-            category = String(strCat)
+        if let strCat = Optional(ahorcadoXML.categoria) {
+            print("Category found from XML is: \(String(strCat!)) and its length is: \(String(strCat!).characters.count)")
+            category = String(strCat!)
             categoryLabel.text = category
             
         } else {
             print("No category was found!")
         }
         
-        if let strWord = Optional(ahorcadoXML.elements.objectForKey("PALABRA")) {
-            // print("Word found from XML length is \(String(strWord).characters.count) characters long")
-            word = String(strWord)
-            wordLabel.text = word
-            print("word casted to string lenth is \(word?.characters.count)")
+        if let strWord = Optional(ahorcadoXML.palabra) {
+            print("Word found from XML length is: \(ahorcadoXML.palabra!) and its length is: \(String(strWord!).characters.count)")
+            word = ahorcadoXML.palabra!
+            // wordLabel.text = word
         } else {
             print("No word was found!")
         }
@@ -85,12 +83,15 @@ class AhorcadoViewController: UIViewController {
                 // Preparing size and position parameters for the Image View
                 if(letters != " ") {
                     firstImage = UIImageView(image: UIImage(named: "\(letters)"))
+                    print("About to print letter \(letters)")
+                } else if(letters == "ñ") {
+                    firstImage = UIImageView(image: UIImage(named: "\ni"))
                 } else {
                     firstImage = UIImageView(image: UIImage(named: "break"))
                 }
                 imageRatio = firstImage.frame.size.width/firstImage.frame.size.height
                 letterHeight = letterWidth/imageRatio
-                // print("POSITION AND SIZE VALUES ARE: \nimageRatio=\(imageRatio)\nletterWidth= \(letterWidth)\nletterHeight:\(letterHeight)")
+                print("POSITION AND SIZE VALUES ARE: \nimageRatio=\(imageRatio)\nletterWidth= \(letterWidth)\nletterHeight:\(letterHeight)")
                 // Presenting Image Views
                 firstImage.frame = CGRect(x: posX, y: posY, width: letterWidth, height: letterHeight)
                 // firstImage.hidden = true                 // Uncomment when word is well positioned
@@ -109,13 +110,13 @@ class AhorcadoViewController: UIViewController {
         
         super.viewDidLoad()
         self.navigationItem.title = "Ahorcado"
-        displayWordHidden("cynthi".uppercaseString)
+        //displayWordHidden("ANIMALESMANDRIL".uppercaseString)
         
-        /*
+        
         if ahorcadoXML.verifyValues() {
             fetchWords()
             if word != nil {
-                displayWordHidden(word!)
+                displayWordHidden(word!.uppercaseString)
             } else {
                 print("No word found")
             }
@@ -123,7 +124,7 @@ class AhorcadoViewController: UIViewController {
             print("Connection to the server could not be established.")
             // Cambiar este print, debe mostrar una alerta en la cual se diga que no se pudo establecer la conexión
         }
-*/
+
     }
     
     // MARK: ACTIONS
