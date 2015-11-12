@@ -15,6 +15,7 @@ class AhorcadoViewController: UIViewController {
     var word: String?
     
     var wordHidden: [UIImageView] = []
+    var breakSpaces: [UIImageView] = []
     // var firstImage: UIImageView!
     
     let ahorcadoXML = AhorcadoXMLParser()
@@ -77,39 +78,54 @@ class AhorcadoViewController: UIViewController {
             let letterWidth:CGFloat = self.view.frame.size.width*0.05
             var letterHeight:CGFloat
             
+            var breakSpaceRatio:CGFloat
+            let breakSpaceWidth:CGFloat = self.view.frame.size.width*0.05
+            var breakSpaceHeight:CGFloat
+            
             let posY: CGFloat = self.view.frame.height/4
             var posX: CGFloat = (self.view.frame.width/2)-(letterWidth*CGFloat(word.characters.count))/2
             
             // wordHidden = word.characters.count
             
+            // Display Word Hidden and Break Spaces
             for letters in word.characters {
                 // print("Cycle will be repeated \(word.characters.count) times")
                 print("\(letters).png")
                 print("Position in x is: \(posX)")
                 // Preparing size and position parameters for the Image View
                 if(letters != " ") {
-                    wordHidden.append(UIImageView(image: UIImage(named: "\(letters)")))
-                    // wordHidden[i] = UIImageView(image: UIImage(named: "\(letters)"))
-                    // firstImage = UIImageView(image: UIImage(named: "\(letters)"))
-                    print("About to print letter \(letters)")
-                } else if(letters == "Ñ") {
-                    wordHidden.append(UIImageView(image: UIImage(named: "\ni")))
-                    // wordHidden[i] = UIImageView(image: UIImage(named: "\ni"))
-                    // firstImage = UIImageView(image: UIImage(named: "\ni"))
-                } else {
+                    if(letters == "Ñ") {
+                        print("-----------ALERTA------ TOCÓ UNA \(letters)")
+                        wordHidden.append(UIImageView(image: UIImage(named: "NI")))
+                        breakSpaces.append(UIImageView(image: UIImage(named: "_")))
+                        // wordHidden[i] = UIImageView(image: UIImage(named: "\ni"))
+                        // firstImage = UIImageView(image: UIImage(named: "\ni"))
+                    } else {
+                        wordHidden.append(UIImageView(image: UIImage(named: "\(letters)")))
+                        breakSpaces.append(UIImageView(image: UIImage(named: "_")))
+                        // wordHidden[i] = UIImageView(image: UIImage(named: "\(letters)"))
+                        // firstImage = UIImageView(image: UIImage(named: "\(letters)"))
+                        print("About to print letter \(letters)")
+                    }
+                } else {        // In case there are no letters or no `ñ`
                     wordHidden.append(UIImageView(image: UIImage(named: "break")))
-                    //wordHidden[i] = UIImageView(image: UIImage(named: "break"))
+                    breakSpaces.append(UIImageView(image: UIImage(named: "break")))
+                    // wordHidden[i] = UIImageView(image: UIImage(named: "break"))
                     // firstImage = UIImageView(image: UIImage(named: "break"))
                 }
                 imageRatio = wordHidden[i].frame.size.width/wordHidden[i].frame.size.height
+                breakSpaceRatio = breakSpaces[i].frame.size.width/breakSpaces[i].frame.size.height
+                breakSpaceHeight = breakSpaceWidth/breakSpaceRatio
                 // imageRatio = firstImage.frame.size.width/firstImage.frame.size.height
                 letterHeight = letterWidth/imageRatio
                 print("POSITION AND SIZE VALUES ARE: \nimageRatio=\(imageRatio)\nletterWidth= \(letterWidth)\nletterHeight:\(letterHeight)")
                 // Presenting Image Views
+                breakSpaces[i].frame = CGRect(x: posX, y: posY+letterHeight+self.view.frame.width*0.001, width: breakSpaceWidth, height: breakSpaceHeight)
                 wordHidden[i].frame = CGRect(x: posX, y: posY, width: letterWidth, height: letterHeight)
                 // firstImage.frame = CGRect(x: posX, y: posY, width: letterWidth, height: letterHeight)
                 // firstImage.hidden = true                 // Uncomment when word is well positioned
                 wordHidden[i].hidden = true
+                self.view.addSubview(breakSpaces[i])
                 self.view.addSubview(wordHidden[i])
                 // self.view.addSubview(firstImage)
                 // images.append(UIImageView(image: UIImage(named: "\(letters)")))
@@ -177,6 +193,10 @@ class AhorcadoViewController: UIViewController {
             letters.removeFromSuperview()
         }
         
+        for spaces in breakSpaces {
+            spaces.removeFromSuperview()
+        }
+        
         wordHidden.removeAll()
         errors = 0
         rightGuesses = 0
@@ -201,6 +221,7 @@ class AhorcadoViewController: UIViewController {
             print("Connection to the server could not be established.")
             // Cambiar este print, debe mostrar una alerta en la cual se diga que no se pudo establecer la conexión
         }
+    
 
     }
     
