@@ -27,6 +27,7 @@ class AhorcadoViewController: UIViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet var letterOutlet: [UIButton]!
+    @IBOutlet var hangman: [UIImageView]!
     
 
     // MARK: METHODS
@@ -157,17 +158,18 @@ class AhorcadoViewController: UIViewController {
             i++
         }
         if !coincidence {
+            hangman[errors].hidden = false
             errors++
         }
         
         if errors >= 6 {
             print("YOU'VE LOST!")
-            gameEnded("¡Has perdido! :(", message: "Presiona OK para iniciar un nuevo juego")
+            gameEnded("¡Has perdido! :(", message: "La respuesta es \(word!)\nPresiona OK para iniciar un nuevo juego")
         }
         
         if rightGuesses >= word?.characters.count {
             print("YOU'VE WON!!!!!!!!!! :D")
-            gameEnded("¡Has ganado! :D", message: "Presiona OK para iniicar un nuevo juego")
+            gameEnded("¡Has ganado! :D", message: "Presiona OK para iniciar un nuevo juego")
         }
         
     }
@@ -195,6 +197,10 @@ class AhorcadoViewController: UIViewController {
         
         for spaces in breakSpaces {
             spaces.removeFromSuperview()
+        }
+        
+        for pieces in hangman {
+            pieces.hidden = true
         }
         
         wordHidden.removeAll()

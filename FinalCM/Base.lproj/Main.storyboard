@@ -357,6 +357,34 @@
                                     <action selector="buttonPressed:" destination="BJv-xF-iwo" eventType="touchUpInside" id="wuO-Dw-yF7"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="base" translatesAutoresizingMaskIntoConstraints="NO" id="Goa-Z1-NgV">
+                                <rect key="frame" x="22" y="146" width="95" height="128"/>
+                                <animations/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="v9d-O7-t4d">
+                                <rect key="frame" x="26" y="162" width="26" height="26"/>
+                                <animations/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trunk" translatesAutoresizingMaskIntoConstraints="NO" id="K7M-vF-jdC">
+                                <rect key="frame" x="36" y="187" width="7" height="36"/>
+                                <animations/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leftArm" translatesAutoresizingMaskIntoConstraints="NO" id="PE0-YN-tqI">
+                                <rect key="frame" x="4" y="187" width="34" height="17"/>
+                                <animations/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rigthArm" translatesAutoresizingMaskIntoConstraints="NO" id="X7w-F9-6dT">
+                                <rect key="frame" x="39" y="188" width="36" height="16"/>
+                                <animations/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leftLeg" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-0d-Jsz">
+                                <rect key="frame" x="20" y="218" width="17" height="39"/>
+                                <animations/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rightLeg" translatesAutoresizingMaskIntoConstraints="NO" id="T39-sA-mr1">
+                                <rect key="frame" x="39" y="216" width="13" height="41"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -391,6 +419,12 @@
                         <outletCollection property="letterOutlet" destination="rKD-c6-4uG" collectionClass="NSMutableArray" id="X0e-Ex-fhs"/>
                         <outletCollection property="letterOutlet" destination="fmC-fl-nJF" collectionClass="NSMutableArray" id="8Bj-69-Uh1"/>
                         <outletCollection property="letterOutlet" destination="EMH-m8-6g9" collectionClass="NSMutableArray" id="hI6-A5-WO5"/>
+                        <outletCollection property="hangman" destination="v9d-O7-t4d" collectionClass="NSMutableArray" id="Nzh-OF-c7e"/>
+                        <outletCollection property="hangman" destination="K7M-vF-jdC" collectionClass="NSMutableArray" id="goe-ZH-JPx"/>
+                        <outletCollection property="hangman" destination="PE0-YN-tqI" collectionClass="NSMutableArray" id="Vli-A5-G0i"/>
+                        <outletCollection property="hangman" destination="X7w-F9-6dT" collectionClass="NSMutableArray" id="eYf-x5-PwZ"/>
+                        <outletCollection property="hangman" destination="qnz-0d-Jsz" collectionClass="NSMutableArray" id="9QQ-0v-Yo4"/>
+                        <outletCollection property="hangman" destination="T39-sA-mr1" collectionClass="NSMutableArray" id="FXx-QX-xBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2B-cv-tu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -578,5 +612,12 @@
         <image name="X" width="87" height="207"/>
         <image name="Y" width="81" height="207"/>
         <image name="Z" width="75" height="207"/>
+        <image name="base" width="127" height="193"/>
+        <image name="head" width="30" height="29"/>
+        <image name="leftArm" width="33" height="14"/>
+        <image name="leftLeg" width="33" height="35"/>
+        <image name="rightLeg" width="31" height="35"/>
+        <image name="rigthArm" width="31" height="15"/>
+        <image name="trunk" width="31" height="519"/>
     </resources>
 </document>
