@@ -225,6 +225,14 @@ class AhorcadoViewController: UIViewController {
             }
         } else {
             print("Connection to the server could not be established.")
+            for letters in letterOutlet {
+                letters.enabled = false
+            }
+            let noConnectionAlert = UIAlertController(title: "Conexión no establecida", message: "El servidor no está disponible o no tienes conexión a Internet. Intenta más tarde.", preferredStyle: UIAlertControllerStyle.Alert)
+            noConnectionAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction: UIAlertAction) -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            self.presentViewController(noConnectionAlert, animated: true, completion: nil)
             // Cambiar este print, debe mostrar una alerta en la cual se diga que no se pudo establecer la conexión
         }
     
