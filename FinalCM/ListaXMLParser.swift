@@ -29,11 +29,11 @@ class ListaXMLParser: NSXMLParser, NSXMLParserDelegate {
         posts.removeFirst()
         if (gID?.characters.count > 0) && (gName?.characters.count > 0) && (gDescription?.characters.count > 0) && (gURL?.characters.count > 0){
             valueExists = true
+            for post in posts {
+                print("Post URL comes in the format \(post["URL"])")
+            }
         }
-        print("BOARD GAMES ARE: ")
-        for post in posts {
-            print(post["ID"])
-        }
+
         return valueExists
     }
     
