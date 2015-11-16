@@ -62,5 +62,30 @@ class ListaTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    // MARK: Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "ShowGameDetail" {
+        
+            let juegoViewController = segue.destinationViewController as! JuegoViewController
+            
+            if let selectedGameCell = sender as? JuegoTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedGameCell)!
+                let selectedGame = xmlParser.posts[indexPath.row]
+                
+                /*
+                juegoViewController.gameTitle.text = selectedGame["NAME"]
+                juegoViewController.gameDescription.text = selectedGame["DESCRIPTION"]
+                */
+                
+                juegoViewController.gTitle = selectedGame["NAME"]
+                juegoViewController.gDescription = selectedGame["DESCRIPTION"]
+                juegoViewController.gID = selectedGame["ID"]
+                
+            }
+        }
+    }
 
 }

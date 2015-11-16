@@ -26,6 +26,7 @@
 		A9BA23131BF16B9E0099B6EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BA23121BF16B9E0099B6EE /* Assets.xcassets */; };
 		A9FC28601BF8448200359856 /* JuegoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC285F1BF8448200359856 /* JuegoTableViewCell.swift */; };
 		A9FC28621BF84A2A00359856 /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC28611BF84A2A00359856 /* ListaTableViewController.swift */; };
+		A9FC28641BF947D400359856 /* JuegoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC28631BF947D400359856 /* JuegoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		A9BA23121BF16B9E0099B6EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets/Assets.xcassets; sourceTree = "<group>"; };
 		A9FC285F1BF8448200359856 /* JuegoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuegoTableViewCell.swift; sourceTree = "<group>"; };
 		A9FC28611BF84A2A00359856 /* ListaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTableViewController.swift; sourceTree = "<group>"; };
+		A9FC28631BF947D400359856 /* JuegoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuegoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				A9BA23121BF16B9E0099B6EE /* Assets.xcassets */,
 				A91C1F771BE00C5F003EF2FB /* MapViewController.swift */,
 				A9FC285F1BF8448200359856 /* JuegoTableViewCell.swift */,
+				A9FC28631BF947D400359856 /* JuegoViewController.swift */,
 				A9FC28611BF84A2A00359856 /* ListaTableViewController.swift */,
 				A961FD641BF6247700E60EDA /* ListaXMLParser.swift */,
 				A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */,
@@ -323,6 +326,7 @@
 			files = (
 				075121571BDFE5F000470227 /* ViewController.m in Sources */,
 				A94CB2591BEF9AEC0038F940 /* AhorcadoXMLParser.swift in Sources */,
+				A9FC28641BF947D400359856 /* JuegoViewController.swift in Sources */,
 				075121541BDFE5F000470227 /* AppDelegate.m in Sources */,
 				075121511BDFE5F000470227 /* main.m in Sources */,
 				A961FD651BF6247700E60EDA /* ListaXMLParser.swift in Sources */,
