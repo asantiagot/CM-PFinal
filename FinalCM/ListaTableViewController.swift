@@ -83,6 +83,7 @@ class ListaTableViewController: UITableViewController {
                 juegoViewController.gTitle = selectedGame["NAME"]
                 juegoViewController.gDescription = selectedGame["DESCRIPTION"]
                 juegoViewController.gID = selectedGame["ID"]
+                juegoViewController.gURL = selectedGame["URL"]
                 
             }
         }

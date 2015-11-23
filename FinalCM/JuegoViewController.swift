@@ -29,6 +29,8 @@ class JuegoViewController: UIViewController, NSXMLParserDelegate {
     @IBOutlet weak var gameDescription: UILabel!
     @IBOutlet weak var gameImage: UIImageView!
     
+    // MARK: ACTIONS
+    
     @IBAction func differentImagePressed(sender: UIButton) {
         
         if sender.tag == 0 {                // LEFT
@@ -45,7 +47,11 @@ class JuegoViewController: UIViewController, NSXMLParserDelegate {
             }
         }
         print("imageCounter value is \(imageCounter)")
-        urlString = deleteUnwantedCharacters(images[imageCounter])
+        if imageCounter != 0 {
+            urlString = deleteUnwantedCharacters(images[imageCounter])
+        } else {
+            urlString = images[imageCounter]
+        }
         gameImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
         
     }
@@ -78,6 +84,7 @@ class JuegoViewController: UIViewController, NSXMLParserDelegate {
     }
     
     override func viewDidLoad() {
+        images.append(gURL!)
         super.viewDidLoad()
         self.navigationItem.title = gTitle!
         
@@ -87,7 +94,7 @@ class JuegoViewController: UIViewController, NSXMLParserDelegate {
         gameDescription.text = gDescription
         gameDescription.textAlignment = NSTextAlignment.Justified
         
-        urlString = deleteUnwantedCharacters(images[imageCounter])
+        urlString = images[imageCounter]
         gameImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
         gameImage.contentMode = UIViewContentMode.ScaleAspectFit
     }

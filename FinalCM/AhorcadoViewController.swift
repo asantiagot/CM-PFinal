@@ -83,8 +83,9 @@ class AhorcadoViewController: UIViewController {
             let breakSpaceWidth:CGFloat = self.view.frame.size.width*0.05
             var breakSpaceHeight:CGFloat
             
-            let posY: CGFloat = self.view.frame.height/4
-            var posX: CGFloat = (self.view.frame.width/2)-(letterWidth*CGFloat(word.characters.count))/2
+            let posY: CGFloat = self.view.frame.height/2.25
+            let spacingX: CGFloat = CGFloat((word.characters.count)) * (self.view.frame.width*0.01)
+            var posX: CGFloat = (self.view.frame.width/2)-((letterWidth*CGFloat(word.characters.count))/2) - spacingX/2
             
             // wordHidden = word.characters.count
             
@@ -131,7 +132,7 @@ class AhorcadoViewController: UIViewController {
                 // self.view.addSubview(firstImage)
                 // images.append(UIImageView(image: UIImage(named: "\(letters)")))
                 // self.view.addSubview(images[i])
-                posX += (self.view.frame.width*0.001+letterWidth)
+                posX += (self.view.frame.width*0.01+letterWidth)
                 i++
             }
         } else {
