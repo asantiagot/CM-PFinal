@@ -111,8 +111,8 @@ class AhorcadoViewController: UIViewController {
         self.navigationItem.title = "Ahorcado"
         displayWordHidden("cynthi".uppercaseString)
         
-        /*
-        if ahorcadoXML.verifyValues() {
+        
+        /*if ahorcadoXML.verifyValues() {
             fetchWords()
             if word != nil {
                 displayWordHidden(word!)
@@ -122,8 +122,8 @@ class AhorcadoViewController: UIViewController {
         } else {
             print("Connection to the server could not be established.")
             // Cambiar este print, debe mostrar una alerta en la cual se diga que no se pudo establecer la conexión
-        }
-*/
+        }*/
+
     }
     
     // MARK: ACTIONS
