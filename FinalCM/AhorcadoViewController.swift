@@ -204,8 +204,20 @@ class AhorcadoViewController: UIViewController {
             pieces.hidden = true
         }
         
+        wordHidden.removeAll()
+        errors = 0
+        rightGuesses = 0
+    }
+    
+    // MARK: METHODS
+    
+    override func viewDidLoad() {
         
-        /*if ahorcadoXML.verifyValues() {
+        resetView()
+        if ahorcadoXML.verifyValues() {
+            super.viewDidLoad()
+            self.navigationItem.title = "Ahorcado"
+            // displayWordHidden("ANIMALESMANDRIL".uppercaseString)
             fetchWords()
             if word != nil {
                 displayWordHidden(word!.uppercaseString)
@@ -223,7 +235,8 @@ class AhorcadoViewController: UIViewController {
             }))
             self.presentViewController(noConnectionAlert, animated: true, completion: nil)
             // Cambiar este print, debe mostrar una alerta en la cual se diga que no se pudo establecer la conexión
-        }*/
+        }
+    
 
     }
     

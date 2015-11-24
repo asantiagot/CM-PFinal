@@ -16,6 +16,14 @@ class ScannerViewController: UIViewController, UINavigationControllerDelegate, U
         super.viewDidLoad()
         
         self.navigationItem.title = "Escáner"
+        
+        let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.height))
+        imageView.image = UIImage(named: "SPSC.png")
+        self.view.insertSubview(imageView, atIndex: 0)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurBackground = UIVisualEffectView(effect: blurEffect)
+        blurBackground.frame = imageView.bounds
+        imageView.addSubview(blurBackground)
 
     }
 

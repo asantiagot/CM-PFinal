@@ -14,6 +14,7 @@
 		0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0751215D1BDFE5F000470227 /* LaunchScreen.storyboard */; };
 		0751216A1BDFE5F000470227 /* FinalCMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121691BDFE5F000470227 /* FinalCMTests.m */; };
 		075121751BDFE5F000470227 /* FinalCMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121741BDFE5F000470227 /* FinalCMUITests.m */; };
+		0770751B1C04C97A006D56D7 /* SPSC.png in Resources */ = {isa = PBXBuildFile; fileRef = 0770751A1C04C97A006D56D7 /* SPSC.png */; };
 		07E0B8E51BE3F63700DE5594 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E0B8E41BE3F63700DE5594 /* MapKit.framework */; };
 		07E0B8E71BE3F7E700DE5594 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E0B8E61BE3F7E700DE5594 /* CoreLocation.framework */; };
 		A91C1F761BE009A2003EF2FB /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */; };
@@ -63,6 +64,7 @@
 		075121701BDFE5F000470227 /* FinalCMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalCMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075121741BDFE5F000470227 /* FinalCMUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinalCMUITests.m; sourceTree = "<group>"; };
 		075121761BDFE5F000470227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0770751A1C04C97A006D56D7 /* SPSC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SPSC.png; sourceTree = "<group>"; };
 		07E0B8E41BE3F63700DE5594 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		07E0B8E61BE3F7E700DE5594 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A91C1F741BE009A1003EF2FB /* FinalCM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinalCM-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				A9BA23121BF16B9E0099B6EE /* Assets.xcassets */,
+				0770751A1C04C97A006D56D7 /* SPSC.png */,
 				A91C1F771BE00C5F003EF2FB /* MapViewController.swift */,
 				A95C4B631BFC2B4B00D5D529 /* MapXMLParser.swift */,
 				A9FC285F1BF8448200359856 /* JuegoTableViewCell.swift */,
@@ -300,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0770751B1C04C97A006D56D7 /* SPSC.png in Resources */,
 				0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */,
 				A9BA23131BF16B9E0099B6EE /* Assets.xcassets in Resources */,
 				0751215A1BDFE5F000470227 /* Main.storyboard in Resources */,
