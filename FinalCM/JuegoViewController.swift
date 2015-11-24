@@ -25,6 +25,8 @@ class JuegoViewController: UIViewController, NSXMLParserDelegate {
     var urlString = ""
     var imageCounter = 0
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
     @IBOutlet weak var gameTitle: UILabel!
     @IBOutlet weak var gameDescription: UILabel!
     @IBOutlet weak var gameImage: UIImageView!
@@ -46,14 +48,32 @@ class JuegoViewController: UIViewController, NSXMLParserDelegate {
                 imageCounter++
             }
         }
+        
+        urlString = images[imageCounter]
+        gameImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
+        
+        /*
+        
+        This code is not longer necessary since XMLParsing is now correctly done. It served as a 
+        string cropper, to delete elements such as \n, \t
+        
         print("imageCounter value is \(imageCounter)")
         if imageCounter != 0 {
-            urlString = deleteUnwantedCharacters(images[imageCounter])
+            var difference = 0
+            if imageCounter > 1 {
+                let sizeOfString = images[imageCounter].characters.count
+                let previousStringSize = images[imageCounter-1].characters.count
+                print("sizeOfString is \(sizeOfString)\npreviousStringSize is \(previousStringSize)")
+                if(previousStringSize < sizeOfString) {
+                    difference = sizeOfString-previousStringSize
+                }
+            }
+            print("difference value is \(difference)")
+            urlString = deleteUnwantedCharacters(images[imageCounter],length: 48+difference)
         } else {
             urlString = images[imageCounter]
         }
-        gameImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
-        
+        */
     }
     
     func verifyConnection() -> Bool{
@@ -74,16 +94,21 @@ class JuegoViewController: UIViewController, NSXMLParserDelegate {
     
     // MARK: METHODS
     
-    func deleteUnwantedCharacters(urlAddress: String) -> String {
+    /*
+    func deleteUnwantedCharacters(urlAddress: String, length: Int) -> String {
         
         var finalURL = urlAddress
-        finalURL.removeRange(finalURL.startIndex.advancedBy(48)..<finalURL.endIndex)
+        finalURL.removeRange(finalURL.startIndex.advancedBy(length)..<finalURL.endIndex)
         print(finalURL)
 
         return finalURL
     }
+    */
     
     override func viewDidLoad() {
+        backgroundImageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: gURL!)!)!)
+        backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        backgroundImageView.alpha = 0.2
         images.append(gURL!)
         super.viewDidLoad()
         self.navigationItem.title = gTitle!
@@ -113,7 +138,7 @@ class JuegoViewController: UIViewController, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String])
     {
         element = elementName
-        if (elementName as NSString).isEqualToString("string") {
+        if (elementName as NSString).isEqualToString("key") {
             elements = NSMutableDictionary()
             elements = [:]
             urlAddress = NSMutableString()
@@ -130,12 +155,13 @@ class JuegoViewController: UIViewController, NSXMLParserDelegate {
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
     {
-        if (elementName as NSString).isEqualToString("array") {
+        if (elementName as NSString).isEqualToString("string") {
             if !urlAddress.isEqual(nil) {
                 elements.setObject(urlAddress, forKey: "URL")
                 images.append(String(urlAddress))
             }
             posts.addObject(elements)
+            print(posts)
         }
     }
 }

@@ -738,6 +738,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="c1T-T0-Sv5">
+                            <rect key="frame" x="0.0" y="182" width="600" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JuegoTableViewCell" rowHeight="90" id="vwJ-J3-9ry" customClass="JuegoTableViewCell" customModule="FinalCM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
@@ -800,6 +805,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Kf2-9N-e66"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="c1T-T0-Sv5" id="sN8-Vd-GXO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGs-yp-2An" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -817,6 +825,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NuR-li-BSr">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="thw-gJ-nGe">
                                 <rect key="frame" x="0.0" y="64" width="600" height="237"/>
                                 <animations/>
@@ -871,19 +883,24 @@
                             <constraint firstItem="6iG-Mx-URJ" firstAttribute="top" secondItem="xiy-xQ-851" secondAttribute="bottom" constant="8" symbolic="YES" id="OZK-Pn-t70"/>
                             <constraint firstItem="thw-gJ-nGe" firstAttribute="top" secondItem="MQl-NL-34u" secondAttribute="bottom" id="SDc-VT-7Js"/>
                             <constraint firstItem="xiy-xQ-851" firstAttribute="trailing" secondItem="obR-Y3-MHy" secondAttribute="trailing" id="aZN-3a-gwX"/>
+                            <constraint firstItem="NuR-li-BSr" firstAttribute="bottom" secondItem="6iG-Mx-URJ" secondAttribute="top" id="adl-xo-dij"/>
                             <constraint firstItem="obR-Y3-MHy" firstAttribute="centerX" secondItem="thw-gJ-nGe" secondAttribute="centerX" id="aoU-DO-d1H"/>
                             <constraint firstItem="xiy-xQ-851" firstAttribute="top" secondItem="obR-Y3-MHy" secondAttribute="bottom" constant="8" symbolic="YES" id="ceS-3i-dlH"/>
                             <constraint firstItem="fTP-cE-eTM" firstAttribute="top" secondItem="MQl-NL-34u" secondAttribute="bottom" constant="104" id="dIX-0I-umc"/>
                             <constraint firstItem="NIY-g2-Nxn" firstAttribute="baseline" secondItem="fTP-cE-eTM" secondAttribute="firstBaseline" id="eAA-Nh-CbI"/>
+                            <constraint firstItem="NuR-li-BSr" firstAttribute="trailing" secondItem="thw-gJ-nGe" secondAttribute="trailing" id="i5B-Iu-0Ec"/>
                             <constraint firstItem="NIY-g2-Nxn" firstAttribute="firstBaseline" secondItem="fTP-cE-eTM" secondAttribute="baseline" id="ich-hx-jPO"/>
                             <constraint firstItem="NIY-g2-Nxn" firstAttribute="trailing" secondItem="obR-Y3-MHy" secondAttribute="trailing" id="nJB-0W-Bdr"/>
                             <constraint firstItem="NIY-g2-Nxn" firstAttribute="top" secondItem="fTP-cE-eTM" secondAttribute="top" id="rIM-ax-6mg"/>
+                            <constraint firstItem="NuR-li-BSr" firstAttribute="leading" secondItem="thw-gJ-nGe" secondAttribute="leading" id="uOO-by-lIA"/>
+                            <constraint firstItem="NuR-li-BSr" firstAttribute="top" secondItem="thw-gJ-nGe" secondAttribute="top" id="ueI-qk-Qzv"/>
                             <constraint firstItem="obR-Y3-MHy" firstAttribute="top" secondItem="thw-gJ-nGe" secondAttribute="bottom" constant="8" symbolic="YES" id="vJb-1W-7ZQ"/>
                             <constraint firstItem="obR-Y3-MHy" firstAttribute="leading" secondItem="xiy-xQ-851" secondAttribute="leading" id="yC0-ux-GQA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5k9-oJ-BM4"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="NuR-li-BSr" id="vze-Pi-Mcd"/>
                         <outlet property="gameDescription" destination="xiy-xQ-851" id="0wM-Ue-97b"/>
                         <outlet property="gameImage" destination="thw-gJ-nGe" id="nff-YY-8Ek"/>
                         <outlet property="gameTitle" destination="obR-Y3-MHy" id="T83-2z-j3z"/>
