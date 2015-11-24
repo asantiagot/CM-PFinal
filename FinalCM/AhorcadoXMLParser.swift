@@ -12,96 +12,72 @@ class AhorcadoXMLParser: NSXMLParser, NSXMLParserDelegate {
     
     // MARK: Attributes
     
-    var posts = NSMutableArray()
-    var parser = NSXMLParser()
-    var elements = NSMutableDictionary()
-    var element = NSString()
-    var categoria = NSMutableString()
-    var palabra = NSMutableString()
+    var posts: [[String: String]]!
+    var element: String!
+    var categoria: String?
+    var palabra: String?
+    var stringValue: String?
+    var counter: Int!
     
-    var finalCat = ""
-    var finalWord = ""
-
     // MARK: Methods
-    
-    func parseXML() {
-        posts = []
-        parser = NSXMLParser(contentsOfURL:(NSURL(string:"http://www.serverbpw.com/cm/2016-1/hangman.php"))!)!
-        parser.delegate = self
-        parser.parse()
-        
-        // tbData!.reloadData()  JUST IF TABLE VIEW IS USED
-    }
-    
-    /*
-    if let dict = try NSPropertyListSerialization.propertyListWithData("http://www.serverbpw.com/cm/2016-1/hangman.php", options: .Immutable, format: nil) as? NSDictionary {
-        let array = dict["PALABRA"] as? [String]
-        categoria = array?[0]
-        palabra = array?[1]
-    }
-    */
-    
     func verifyValues() -> Bool {
-        parseXML()
+        parseXML(NSURL(string: "http://www.serverbpw.com/cm/2016-1/hangman.php")!)
         var valueExists = false
-        if categoria.length != 0 && palabra.length != 0 {
+        if (categoria?.characters.count > 0) && (palabra?.characters.count > 0) {
             valueExists = true
         }
         return valueExists
     }
     
-    // MARK: XMLParser Methods
+    // MARK: NSXMLParser Methods
+    
+    func parseXML(url: NSURL) {
+        posts = [[:]]
+        let parser = NSXMLParser(contentsOfURL: url)!
+        parser.delegate = self
+        parser.parse()
+    }
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         element = elementName
-        
-        // TODO: Search an alternative method to get both <string> content. This one is hardcoded.
-        if (elementName as NSString).isEqualToString("array") {
-            elements = NSMutableDictionary()
-            elements = [:]
-            categoria = NSMutableString()
-            categoria = ""
-        }
-        
-        if (elementName as NSString).isEqualToString("string") {
-            palabra = NSMutableString()
-            palabra = ""
+        if elementName == "array" {
+            categoria = nil
+            palabra = nil
+            counter = 0
         }
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
-
-        
-        if element.isEqualToString("string") {
-            categoria.appendString(string)
-            // print("MESSAGE FROM PARSER-- Categoria is: \(categoria)")
+        if element == "string" {
+            if stringValue == nil {
+                stringValue = string
+            } else {
+                stringValue! += string
+            }
         }
-        
-        if element.isEqualToString("string") {
-            palabra.appendString(string)
-        }
-
-        
-        /*
-        if element.isEqualToString("title") {
-        title1.appendString(string)
-        } else if element.isEqualToString("pubDate") {
-        date.appendString(string)
-        }
-        */
     }
     
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
-    {
-        if (elementName as NSString).isEqualToString("array") {
-            if !categoria.isEqual(nil) {
-                elements.setObject(categoria, forKey: "CATEGORIA")
+    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        if elementName == "string" {
+            stringValue = stringValue?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            if counter == 0 {
+                categoria = stringValue
+            } else if counter == 1 {
+                palabra = stringValue
             }
-            if !palabra.isEqual(nil) {
-                elements.setObject(palabra, forKey: "PALABRA")
+            stringValue = nil
+            counter!++
+        }
+        
+        if elementName == "array" {
+            var element = [String: String]()
+            if categoria != nil {
+                element["CATEGORIA"] = categoria
             }
-            
-            posts.addObject(elements)
+            if palabra != nil {
+                element["PALABRA"] = palabra
+            }            
+            posts.append(element)
         }
     }
 }

@@ -18,12 +18,16 @@
 		07E0B8E71BE3F7E700DE5594 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E0B8E61BE3F7E700DE5594 /* CoreLocation.framework */; };
 		A91C1F761BE009A2003EF2FB /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */; };
 		A91C1F781BE00C5F003EF2FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F771BE00C5F003EF2FB /* MapViewController.swift */; };
-		A91C1F7A1BE00C92003EF2FB /* ListaJuegosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */; };
 		A91C1F7C1BE00CAF003EF2FB /* AhorcadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */; };
 		A93E4EF61BE28DFC00626B82 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF51BE28DFC00626B82 /* CoreImage.framework */; };
 		A93E4EF81BE28E0D00626B82 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E4EF71BE28E0D00626B82 /* libstdc++.6.0.9.tbd */; };
 		A94CB2591BEF9AEC0038F940 /* AhorcadoXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94CB2581BEF9AEC0038F940 /* AhorcadoXMLParser.swift */; };
+		A95C4B641BFC2B4B00D5D529 /* MapXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C4B631BFC2B4B00D5D529 /* MapXMLParser.swift */; };
+		A961FD651BF6247700E60EDA /* ListaXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961FD641BF6247700E60EDA /* ListaXMLParser.swift */; };
 		A9BA23131BF16B9E0099B6EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BA23121BF16B9E0099B6EE /* Assets.xcassets */; };
+		A9FC28601BF8448200359856 /* JuegoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC285F1BF8448200359856 /* JuegoTableViewCell.swift */; };
+		A9FC28621BF84A2A00359856 /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC28611BF84A2A00359856 /* ListaTableViewController.swift */; };
+		A9FC28641BF947D400359856 /* JuegoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC28631BF947D400359856 /* JuegoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +68,17 @@
 		A91C1F741BE009A1003EF2FB /* FinalCM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinalCM-Bridging-Header.h"; sourceTree = "<group>"; };
 		A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		A91C1F771BE00C5F003EF2FB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaJuegosViewController.swift; sourceTree = "<group>"; };
 		A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AhorcadoViewController.swift; sourceTree = "<group>"; };
 		A93E4EF31BE28DE800626B82 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
 		A93E4EF51BE28DFC00626B82 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		A93E4EF71BE28E0D00626B82 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		A94CB2581BEF9AEC0038F940 /* AhorcadoXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AhorcadoXMLParser.swift; sourceTree = "<group>"; };
+		A95C4B631BFC2B4B00D5D529 /* MapXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapXMLParser.swift; sourceTree = "<group>"; };
+		A961FD641BF6247700E60EDA /* ListaXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaXMLParser.swift; sourceTree = "<group>"; };
 		A9BA23121BF16B9E0099B6EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets/Assets.xcassets; sourceTree = "<group>"; };
+		A9FC285F1BF8448200359856 /* JuegoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuegoTableViewCell.swift; sourceTree = "<group>"; };
+		A9FC28611BF84A2A00359856 /* ListaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTableViewController.swift; sourceTree = "<group>"; };
+		A9FC28631BF947D400359856 /* JuegoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuegoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +136,11 @@
 			children = (
 				A9BA23121BF16B9E0099B6EE /* Assets.xcassets */,
 				A91C1F771BE00C5F003EF2FB /* MapViewController.swift */,
-				A91C1F791BE00C92003EF2FB /* ListaJuegosViewController.swift */,
+				A95C4B631BFC2B4B00D5D529 /* MapXMLParser.swift */,
+				A9FC285F1BF8448200359856 /* JuegoTableViewCell.swift */,
+				A9FC28631BF947D400359856 /* JuegoViewController.swift */,
+				A9FC28611BF84A2A00359856 /* ListaTableViewController.swift */,
+				A961FD641BF6247700E60EDA /* ListaXMLParser.swift */,
 				A91C1F751BE009A2003EF2FB /* ScannerViewController.swift */,
 				A91C1F7B1BE00CAF003EF2FB /* AhorcadoViewController.swift */,
 				A94CB2581BEF9AEC0038F940 /* AhorcadoXMLParser.swift */,
@@ -316,13 +328,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				075121571BDFE5F000470227 /* ViewController.m in Sources */,
+				A95C4B641BFC2B4B00D5D529 /* MapXMLParser.swift in Sources */,
 				A94CB2591BEF9AEC0038F940 /* AhorcadoXMLParser.swift in Sources */,
+				A9FC28641BF947D400359856 /* JuegoViewController.swift in Sources */,
 				075121541BDFE5F000470227 /* AppDelegate.m in Sources */,
 				075121511BDFE5F000470227 /* main.m in Sources */,
+				A961FD651BF6247700E60EDA /* ListaXMLParser.swift in Sources */,
 				A91C1F781BE00C5F003EF2FB /* MapViewController.swift in Sources */,
 				A91C1F7C1BE00CAF003EF2FB /* AhorcadoViewController.swift in Sources */,
+				A9FC28621BF84A2A00359856 /* ListaTableViewController.swift in Sources */,
+				A9FC28601BF8448200359856 /* JuegoTableViewCell.swift in Sources */,
 				A91C1F761BE009A2003EF2FB /* ScannerViewController.swift in Sources */,
-				A91C1F7A1BE00C92003EF2FB /* ListaJuegosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
