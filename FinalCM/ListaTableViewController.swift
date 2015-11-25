@@ -24,6 +24,15 @@ class ListaTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
+        let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+        imageView.image = UIImage(named: "SPSC.png")
+        self.view.insertSubview(imageView, atIndex: 0)
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let imageBlur = UIVisualEffectView(effect: blurEffect)
+        imageBlur.frame = imageView.bounds
+        imageView.addSubview(imageBlur)
+        
         if xmlParser.verifyValues() {
             print("Connection successful")
         } else {
