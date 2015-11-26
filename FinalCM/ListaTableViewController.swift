@@ -14,21 +14,18 @@ class ListaTableViewController: UITableViewController {
     // MARK: ATTRIBUTES
 
     let xmlParser = ListaXMLParser()
-
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     // MARK: METHODS
 
     override func viewDidLoad() {
         self.title = "Lista de Juegos"
-        
         super.viewDidLoad()
-        
         let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         imageView.image = UIImage(named: "SPSC.png")
         self.view.insertSubview(imageView, atIndex: 0)
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         let imageBlur = UIVisualEffectView(effect: blurEffect)
         imageBlur.frame = imageView.bounds
         imageView.addSubview(imageBlur)
@@ -41,12 +38,11 @@ class ListaTableViewController: UITableViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
             }))
             self.presentViewController(noConnectionController, animated: true, completion: nil)
-        }
+        }        
     }
 
 
     // MARK: - Table view data source
-    
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return xmlParser.posts.count

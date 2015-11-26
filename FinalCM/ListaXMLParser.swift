@@ -6,6 +6,7 @@
 //  Copyright © 2015 Abner Castro Aguilar. All rights reserved.
 //
 
+
 import Foundation
 
 class ListaXMLParser: NSXMLParser, NSXMLParserDelegate {
@@ -20,10 +21,10 @@ class ListaXMLParser: NSXMLParser, NSXMLParserDelegate {
     var counter: Int!
     
     
+    
     // MARK: Methods
     
     func verifyValues() -> Bool {
-
         parseXML(NSURL(string: "http://www.serverbpw.com/cm/2016-1/list.php")!)
         var valueExists = false
         posts.removeFirst()
