@@ -160,6 +160,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.mkMapView.delegate = self
             self.mkMapView.addAnnotations(self.mkAnnotationStores)
             
+            /*
+            let rectToDisplay = self.mkAnnotationStores.reduce(MKMapRectNull) {
+                (mapRect: MKMapRect, mkAnnotationStore: Store) -> MKMapRect in
+                let storePointRect = MKMapRect(origin: MKMapPoint(x: mkAnnotationStore.location.latitude, y: mkAnnotationStore.location.longitude), size: MKMapSize(width: 0, height: 0))
+                return MKMapRectUnion(mapRect, storePointRect)
+            }
+            
+            self.mkMapView.setVisibleMapRect(rectToDisplay, edgePadding: UIEdgeInsetsMake(74, 10, 10, 10), animated: false)
+            
+            */
+            
             // calculateDistances()
         } else {
             let noConnectionController = UIAlertController(title: "Conexión no establecida", message: "El servidor no está disponible o no tienes acceso a Internet. Intenta más tarde.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -178,44 +189,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    // MapKit Delegate Methods
+    // MKMapViewDelegate Methods
     
-    /*
-    - (MKAnnotationView *)mapView:(MKMapView *)mapView
-    viewForAnnotation:(id <MKAnnotation>)annotation
-    {
-    // If the annotation is the user location, just return nil.
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-    return nil;
-    
-    // Handle any custom annotations.
-    if ([annotation isKindOfClass:[MyCustomAnnotation class]])
-    {
-    // Try to dequeue an existing pin view first.
-    MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
-    dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
-    
-    if (!pinView)
-    {
-    // If an existing pin view was not available, create one.
-    pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-    reuseIdentifier:@"CustomPinAnnotationView"];
-    pinView.pinColor = MKPinAnnotationColorRed;
-    pinView.animatesDrop = YES;
-    pinView.canShowCallout = YES;
-    
-    // If appropriate, customize the callout by adding accessory views (code not shown).
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if let store = annotation as? Store {
+            var view = mapView.dequeueReusableAnnotationViewWithIdentifier("pin") as! MKPinAnnotationView!
+            if view == nil {
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+                view.canShowCallout = true
+                view.animatesDrop = true
+                view.calloutOffset = CGPoint(x: -5, y: -5)
+            } else {
+                view.annotation = annotation
+            }
+            return view
+        }
+        return nil
     }
-    else
-    pinView.annotation = annotation;
-    
-    return pinView;
-    }
-    
-    return nil;
-    }
-    
-    */
     
     // CLLocationManagerDelegate Methods
     
