@@ -127,6 +127,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="JlH-Dm-cfC"/>
                     <connections>
+                        <outlet property="mkMapView" destination="VO8-Cz-kGI" id="WHv-fP-fwV"/>
                         <outlet property="storeDistance" destination="z65-1c-a58" id="gT5-hK-2jv"/>
                         <outlet property="storeName" destination="Khr-xV-20H" id="dfI-nk-5pH"/>
                     </connections>
@@ -739,12 +740,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" id="K0U-vR-F85">
+                            <rect key="frame" x="0.0" y="182" width="600" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JuegoTableViewCell" rowHeight="90" id="vwJ-J3-9ry" customClass="JuegoTableViewCell" customModule="FinalCM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vwJ-J3-9ry" id="uLH-8l-yh9">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V5i-I9-sDs">
@@ -802,6 +808,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Kf2-9N-e66"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="K0U-vR-F85" id="b6p-re-mR6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGs-yp-2An" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

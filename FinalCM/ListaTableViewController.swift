@@ -15,12 +15,16 @@ class ListaTableViewController: UITableViewController {
 
     let xmlParser = ListaXMLParser()
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: METHODS
-
+    
     override func viewDidLoad() {
+
         self.title = "Lista de Juegos"
         super.viewDidLoad()
+        
+        // Efecto blur
         let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         imageView.image = UIImage(named: "SPSC.png")
         self.view.insertSubview(imageView, atIndex: 0)
@@ -30,6 +34,8 @@ class ListaTableViewController: UITableViewController {
         imageBlur.frame = imageView.bounds
         imageView.addSubview(imageBlur)
         
+        // Obtención de información desde el servidor
+        
         if xmlParser.verifyValues() {
             print("Connection successful")
         } else {
@@ -38,7 +44,7 @@ class ListaTableViewController: UITableViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
             }))
             self.presentViewController(noConnectionController, animated: true, completion: nil)
-        }        
+        }
     }
 
 
@@ -47,7 +53,6 @@ class ListaTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return xmlParser.posts.count
     }
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
