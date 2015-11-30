@@ -160,17 +160,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.mkMapView.delegate = self
             self.mkMapView.addAnnotations(self.mkAnnotationStores)
             
-            /*
-            let rectToDisplay = self.mkAnnotationStores.reduce(MKMapRectNull) {
+            let rectToDisplay = self.mkAnnotationStores.reduce(MKMapRectNull) {     // Rectangle area where the view will load
                 (mapRect: MKMapRect, mkAnnotationStore: Store) -> MKMapRect in
-                let storePointRect = MKMapRect(origin: MKMapPoint(x: mkAnnotationStore.location.latitude, y: mkAnnotationStore.location.longitude), size: MKMapSize(width: 0, height: 0))
+                let storePointRect = MKMapRect(origin: MKMapPointForCoordinate(CLLocationCoordinate2DMake(CLLocationDegrees(mkAnnotationStore.location.latitude), CLLocationDegrees(mkAnnotationStore.location.longitude))), size: MKMapSize(width: 0, height: 0))
                 return MKMapRectUnion(mapRect, storePointRect)
             }
             
             self.mkMapView.setVisibleMapRect(rectToDisplay, edgePadding: UIEdgeInsetsMake(74, 10, 10, 10), animated: false)
-            
-            */
-            
             // calculateDistances()
         } else {
             let noConnectionController = UIAlertController(title: "Conexión no establecida", message: "El servidor no está disponible o no tienes acceso a Internet. Intenta más tarde.", preferredStyle: UIAlertControllerStyle.Alert)
