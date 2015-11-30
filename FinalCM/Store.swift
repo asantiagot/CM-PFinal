@@ -12,10 +12,12 @@ import MapKit
 class Store: NSObject {
     let name: String
     let location: CLLocationCoordinate2D
+    let pinColor: UIColor
     
     init(name: String, location: CLLocationCoordinate2D) {
         self.name = name
         self.location = location
+        self.pinColor = MKPinAnnotationView.greenPinColor()
     }
     
     convenience init(name: String, latitude: Double, longitude: Double) {
@@ -23,9 +25,10 @@ class Store: NSObject {
         self.init(name: name, location: location)
     }
     
-    func pinColor() -> UIColor {
-        return MKPinAnnotationView.purplePinColor()
+    /*func pinColor() -> UIColor {
+        return MKPinAnnotationView.greenPinColor()
     }
+*/
 }
 
 @objc protocol Alertable {

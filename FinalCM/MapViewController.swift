@@ -137,8 +137,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func displayStoresInView(index: Int) {
         
         // Display stores in View (labels)
-        storeName.text = "Tienda: \(storesInfo[index]["NAME"]!)"
-        storeDistance.text = "Distancia: a \(storesInfo[index]["DISTTOUSER"]!) metros"
+        storeName.text = storesInfo[index]["NAME"]!
+        storeDistance.text = "A \(storesInfo[index]["DISTTOUSER"]!) metros"
         
         // Display stores as pin buttons
         
@@ -146,6 +146,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         
+        startLocationServices()
         if mapParser.verifyValues() {
             print("Copiando valores desde XMLParser")
             for stores in mapParser.posts {
@@ -155,8 +156,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let auxLongitude: Double = Double(stores["LONGITUDE"]!)!
                 mkAnnotationStores.append(Store(name: auxTitle, latitude: auxLatitude, longitude: auxLongitude))
             }
-
-            startLocationServices()
+            /*
+            mkAnnotationStores.append(Store(name: "Tú", latitude: userLocation.latitude, longitude: userLocation.longitude))
+            */
+            
             self.mkMapView.delegate = self
             self.mkMapView.addAnnotations(self.mkAnnotationStores)
             
@@ -166,7 +169,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 return MKMapRectUnion(mapRect, storePointRect)
             }
             
-            self.mkMapView.setVisibleMapRect(rectToDisplay, edgePadding: UIEdgeInsetsMake(74, 10, 10, 10), animated: false)
+            self.mkMapView.setVisibleMapRect(rectToDisplay, edgePadding: UIEdgeInsetsMake(CGFloat(200), CGFloat(200), CGFloat(200), CGFloat(200)), animated: false)
             // calculateDistances()
         } else {
             let noConnectionController = UIAlertController(title: "Conexión no establecida", message: "El servidor no está disponible o no tienes acceso a Internet. Intenta más tarde.", preferredStyle: UIAlertControllerStyle.Alert)
