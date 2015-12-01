@@ -13,16 +13,18 @@ class Store: NSObject {
     let name: String
     let location: CLLocationCoordinate2D
     let pinColor: UIColor
+    let index: Int
     
-    init(name: String, location: CLLocationCoordinate2D) {
+    init(name: String, location: CLLocationCoordinate2D, index: Int) {
         self.name = name
         self.location = location
         self.pinColor = MKPinAnnotationView.greenPinColor()
+        self.index = index
     }
     
-    convenience init(name: String, latitude: Double, longitude: Double) {
+    convenience init(name: String, latitude: Double, longitude: Double, index: Int) {
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        self.init(name: name, location: location)
+        self.init(name: name, location: location, index: index)
     }
     
     /*func pinColor() -> UIColor {

@@ -149,12 +149,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         startLocationServices()
         if mapParser.verifyValues() {
             print("Copiando valores desde XMLParser")
+            var auxCounter = 0
             for stores in mapParser.posts {
                 storesInfo.append(stores)
                 let auxTitle: String = stores["NAME"]!
                 let auxLatitude: Double = Double(stores["LATITUDE"]!)!
                 let auxLongitude: Double = Double(stores["LONGITUDE"]!)!
-                mkAnnotationStores.append(Store(name: auxTitle, latitude: auxLatitude, longitude: auxLongitude))
+                mkAnnotationStores.append(Store(name: auxTitle, latitude: auxLatitude, longitude: auxLongitude, index: auxCounter))
+                auxCounter++
             }
             /*
             mkAnnotationStores.append(Store(name: "Tú", latitude: userLocation.latitude, longitude: userLocation.longitude))
@@ -190,7 +192,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     // MKMapViewDelegate Methods
     
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        displayStoresInView(view.tag)
+    }
+    
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+
         if let store = annotation as? Store {
             var view = mapView.dequeueReusableAnnotationViewWithIdentifier("pin") as! MKPinAnnotationView!
             if view == nil {
@@ -198,6 +205,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 view.canShowCallout = true
                 view.animatesDrop = true
                 view.calloutOffset = CGPoint(x: -5, y: -5)
+                view.pinTintColor = UIColor.purpleColor()
             } else {
                 view.annotation = annotation
             }

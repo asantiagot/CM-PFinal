@@ -79,17 +79,17 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z65-1c-a58">
-                                        <rect key="frame" x="46" y="30" width="508" height="21"/>
+                                        <rect key="frame" x="46" y="30" width="546" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-xV-20H">
-                                        <rect key="frame" x="46" y="8" width="508" height="21"/>
+                                        <rect key="frame" x="46" y="8" width="546" height="21"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="IVL-mZ-E6C"/>
+                                            <constraint firstAttribute="height" constant="21" id="QNR-eO-V42"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,18 +99,17 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Khr-xV-20H" firstAttribute="top" secondItem="J9D-Ue-rBI" secondAttribute="topMargin" id="74s-Ys-PuO"/>
                                     <constraint firstItem="E6o-cd-7Mc" firstAttribute="centerY" secondItem="J9D-Ue-rBI" secondAttribute="centerY" id="7RP-dW-YR8"/>
                                     <constraint firstItem="SUW-Ze-RgA" firstAttribute="leading" secondItem="J9D-Ue-rBI" secondAttribute="leadingMargin" id="9PY-g6-qUH"/>
-                                    <constraint firstItem="E6o-cd-7Mc" firstAttribute="leading" secondItem="z65-1c-a58" secondAttribute="trailing" constant="8" symbolic="YES" id="Dx8-F8-PY8"/>
-                                    <constraint firstItem="z65-1c-a58" firstAttribute="bottom" secondItem="J9D-Ue-rBI" secondAttribute="bottomMargin" id="Enc-uu-vH5"/>
-                                    <constraint firstItem="Khr-xV-20H" firstAttribute="leading" secondItem="SUW-Ze-RgA" secondAttribute="trailing" constant="8" symbolic="YES" id="Gwi-lH-ERE"/>
-                                    <constraint firstItem="z65-1c-a58" firstAttribute="leading" secondItem="SUW-Ze-RgA" secondAttribute="trailing" constant="8" symbolic="YES" id="NVK-oJ-Ot8"/>
+                                    <constraint firstItem="Khr-xV-20H" firstAttribute="leading" secondItem="z65-1c-a58" secondAttribute="leading" id="S0W-sh-w8k"/>
                                     <constraint firstItem="E6o-cd-7Mc" firstAttribute="baseline" secondItem="SUW-Ze-RgA" secondAttribute="baseline" id="X64-u6-haV"/>
-                                    <constraint firstItem="z65-1c-a58" firstAttribute="top" secondItem="Khr-xV-20H" secondAttribute="bottom" constant="1" id="aFx-EI-JNF"/>
-                                    <constraint firstItem="Khr-xV-20H" firstAttribute="centerX" secondItem="J9D-Ue-rBI" secondAttribute="centerX" id="dhU-Qq-v2o"/>
+                                    <constraint firstItem="z65-1c-a58" firstAttribute="trailing" secondItem="E6o-cd-7Mc" secondAttribute="trailing" id="eC0-cy-c41"/>
+                                    <constraint firstItem="z65-1c-a58" firstAttribute="bottom" secondItem="J9D-Ue-rBI" secondAttribute="bottomMargin" id="fQ6-g6-IQ3"/>
+                                    <constraint firstItem="Khr-xV-20H" firstAttribute="leading" secondItem="SUW-Ze-RgA" secondAttribute="trailing" constant="8" symbolic="YES" id="mKn-j3-UYE"/>
+                                    <constraint firstItem="Khr-xV-20H" firstAttribute="trailing" secondItem="E6o-cd-7Mc" secondAttribute="trailing" id="nlJ-sN-eWz"/>
+                                    <constraint firstItem="Khr-xV-20H" firstAttribute="top" secondItem="J9D-Ue-rBI" secondAttribute="topMargin" id="peb-EO-Bf9"/>
+                                    <constraint firstItem="z65-1c-a58" firstAttribute="top" secondItem="Khr-xV-20H" secondAttribute="bottom" constant="1" id="sK7-c4-N3q"/>
                                     <constraint firstItem="E6o-cd-7Mc" firstAttribute="trailing" secondItem="J9D-Ue-rBI" secondAttribute="trailingMargin" id="tts-hY-bBE"/>
-                                    <constraint firstItem="E6o-cd-7Mc" firstAttribute="leading" secondItem="Khr-xV-20H" secondAttribute="trailing" constant="8" symbolic="YES" id="yYw-cC-HkX"/>
                                 </constraints>
                             </view>
                         </subviews>
