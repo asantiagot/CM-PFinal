@@ -53,7 +53,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 displayIndex++
             }
         }
-        displayStoresInView(displayIndex)
+        displayStoreInLabel(displayIndex)
     }
     
     // MARK: METHODS
@@ -134,14 +134,32 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    func displayStoresInView(index: Int) {
+    func displayStoreInLabel(index: Int) {
         
         // Display stores in View (labels)
         storeName.text = storesInfo[index]["NAME"]!
         storeDistance.text = "A \(storesInfo[index]["DISTTOUSER"]!) metros"
         
         // Display stores as pin buttons
+    
         
+    }
+    
+    /*
+    HARDCODED METHOD. When user selects a Pin in mapView, this method searches for the Store Title and if it is found, changes the text label in the lower view.
+    Ideal solution to this would be to add a field in Store (such as an Int index) and use displayStoreInLabel with that index. This doesn't work because up till now, no way to increment the auxCounter has been found, at the moment when the MKPinAnnotationView are created
+    */
+    func changeLabelFromPinSelected(name: String) {
+        
+        var aux = 0
+        for stores in storesInfo {
+            if name == stores["NAME"] {
+                displayStoreInLabel(aux)
+            } else {
+                print("Something went wrong!")
+            }
+            aux++
+        }
     }
     
     override func viewDidLoad() {
@@ -193,7 +211,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     // MKMapViewDelegate Methods
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        displayStoresInView(view.tag)
+
+        changeLabelFromPinSelected((view.annotation?.title!)!)
+        view.highlighted = true
+        view.setSelected(true, animated: true)
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -206,6 +227,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 view.animatesDrop = true
                 view.calloutOffset = CGPoint(x: -5, y: -5)
                 view.pinTintColor = UIColor.purpleColor()
+                view.image = UIImage(named: "A")
             } else {
                 view.annotation = annotation
             }
@@ -221,6 +243,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         print("locations = \(userLocation.latitude) \(userLocation.longitude)")
         
         calculateDistances()
-        displayStoresInView(displayIndex)
+        displayStoreInLabel(displayIndex)
     }
 }
