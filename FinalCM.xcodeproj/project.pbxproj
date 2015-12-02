@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074B74BB1C0F3C1D00F5F610 /* ahorcadito@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 074B74B81C0F3C1D00F5F610 /* ahorcadito@2x.png */; };
+		074B74BC1C0F3C1D00F5F610 /* lista1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 074B74B91C0F3C1D00F5F610 /* lista1@2x.png */; };
+		074B74BD1C0F3C1D00F5F610 /* mapita@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 074B74BA1C0F3C1D00F5F610 /* mapita@2x.png */; };
+		074B74BF1C0F3D4800F5F610 /* Scanner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 074B74BE1C0F3D4800F5F610 /* Scanner@2x.png */; };
+		074B74C31C0F3E0600F5F610 /* SPSC copia233.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074B74C21C0F3E0600F5F610 /* SPSC copia233.jpg */; };
 		075121511BDFE5F000470227 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121501BDFE5F000470227 /* main.m */; };
 		075121541BDFE5F000470227 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121531BDFE5F000470227 /* AppDelegate.m */; };
 		075121571BDFE5F000470227 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 075121561BDFE5F000470227 /* ViewController.m */; };
@@ -50,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		074B74B81C0F3C1D00F5F610 /* ahorcadito@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ahorcadito@2x.png"; sourceTree = "<group>"; };
+		074B74B91C0F3C1D00F5F610 /* lista1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lista1@2x.png"; sourceTree = "<group>"; };
+		074B74BA1C0F3C1D00F5F610 /* mapita@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapita@2x.png"; sourceTree = "<group>"; };
+		074B74BE1C0F3D4800F5F610 /* Scanner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Scanner@2x.png"; sourceTree = "<group>"; };
+		074B74C21C0F3E0600F5F610 /* SPSC copia233.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SPSC copia233.jpg"; sourceTree = "<group>"; };
 		0751214C1BDFE5F000470227 /* FinalCM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalCM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075121501BDFE5F000470227 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		075121521BDFE5F000470227 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -139,6 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				A9BA23121BF16B9E0099B6EE /* Assets.xcassets */,
+				074B74BE1C0F3D4800F5F610 /* Scanner@2x.png */,
+				074B74B81C0F3C1D00F5F610 /* ahorcadito@2x.png */,
+				074B74B91C0F3C1D00F5F610 /* lista1@2x.png */,
+				074B74BA1C0F3C1D00F5F610 /* mapita@2x.png */,
+				074B74C21C0F3E0600F5F610 /* SPSC copia233.jpg */,
 				0770751A1C04C97A006D56D7 /* SPSC.png */,
 				A95681CA1C0CC3E5001FF698 /* Store.swift */,
 				A91C1F771BE00C5F003EF2FB /* MapViewController.swift */,
@@ -307,8 +322,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0770751B1C04C97A006D56D7 /* SPSC.png in Resources */,
+				074B74BB1C0F3C1D00F5F610 /* ahorcadito@2x.png in Resources */,
 				0751215F1BDFE5F000470227 /* LaunchScreen.storyboard in Resources */,
+				074B74BC1C0F3C1D00F5F610 /* lista1@2x.png in Resources */,
 				A9BA23131BF16B9E0099B6EE /* Assets.xcassets in Resources */,
+				074B74BF1C0F3D4800F5F610 /* Scanner@2x.png in Resources */,
+				074B74C31C0F3E0600F5F610 /* SPSC copia233.jpg in Resources */,
+				074B74BD1C0F3C1D00F5F610 /* mapita@2x.png in Resources */,
 				0751215A1BDFE5F000470227 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
