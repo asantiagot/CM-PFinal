@@ -116,18 +116,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             for var i=0; i<storesInfo.count; i++ {
                 if !(i+1 == storesInfo.count) {                                             // Making sure Dictionary index is valid
                     print("Will work with index \(i)")
-                    if(storesInfo[i+1]["DISTTOUSER"]! < storesInfo[i]["DISTTOUSER"]!) {       // If the next value is smaller...
-                        print(" Value of DISTTOUSER at i+1, \(storesInfo[i+1]["DISTTOUSER"]!) is smaller than key at i, \(storesInfo[i]["DISTTOUSER"]!)")
-                        let auxVar = storesInfo[i]                                          // Store current value in auxiliary variable
+                    let currentValue: Double =  Double(storesInfo[i]["DISTTOUSER"]!)!
+                    let nextValue: Double = Double(storesInfo[i+1]["DISTTOUSER"]!)!
+                    
+                    if(currentValue > nextValue) {                                          // If the next value is smaller...
+                        let auxVar = storesInfo[i]
                         storesInfo[i] = storesInfo[i+1]                                     // Current value will now be the next value
-                        storesInfo[i+1] = auxVar                                            // Use auxVar that contains previous value of current value
+                        storesInfo[i+1] = auxVar
                         swaps = true
-                        print("Swaps can still occur")
                     }
                 }
             }
         }
-        print("No more swaps")
         
         print("Final value of storesInfo AFTER SORTING is:\n")
         for stores in storesInfo {
@@ -174,6 +174,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         startLocationServices()
         if mapParser.verifyValues() {
             print("Copiando valores desde XMLParser")
+            mapParser.posts.append(["NAME": "Bodega Aurrera", "LONGITUDE": "-100.158607", "LATITUDE": "19.335284"])
+            mapParser.posts.append(["NAME": "Superama", "LONGITUDE": "-98.158609", "LATITUDE": "19.235281"])
+            mapParser.posts.append(["NAME": "OXXO Cuajimalpa", "LONGITUDE": "-98.158611", "LATITUDE": "19.335282"])
+            mapParser.posts.append(["NAME": "Seven Eleven", "LONGITUDE": "-98.158600", "LATITUDE": "19.335287"])
+            mapParser.posts.append(["NAME": "Comercial Mexicana", "LONGITUDE": "-98.158601", "LATITUDE": "19.335288"])
             var auxCounter = 0
             for stores in mapParser.posts {
                 storesInfo.append(stores)
