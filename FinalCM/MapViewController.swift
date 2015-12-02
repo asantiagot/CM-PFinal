@@ -103,6 +103,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             counter++
         }
         
+        print("Final value of storesInfo BEFORE SORTING is:\n")
+        for stores in storesInfo {
+            print(stores)
+        }
+        
         // Sorting storesInfo according to distance from store to user location (bubble sort)
         
         var swaps = true
@@ -111,18 +116,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             for var i=0; i<storesInfo.count; i++ {
                 if !(i+1 == storesInfo.count) {                                             // Making sure Dictionary index is valid
                     print("Will work with index \(i)")
-                    if(storesInfo[i+1]["DISTTOUSER"] < storesInfo[i]["DISTTOUSER"]) {       // If the next value is greater...
-                        print(" Value of DISTTOUSER at i+1 is \(storesInfo[i+1]["DISTTOUSER"]) and same key at current index is \(storesInfo[i]["DISTTOUSER"])")
+                    if(storesInfo[i+1]["DISTTOUSER"]! < storesInfo[i]["DISTTOUSER"]!) {       // If the next value is smaller...
+                        print(" Value of DISTTOUSER at i+1, \(storesInfo[i+1]["DISTTOUSER"]!) is smaller than key at i, \(storesInfo[i]["DISTTOUSER"]!)")
                         let auxVar = storesInfo[i]                                          // Store current value in auxiliary variable
                         storesInfo[i] = storesInfo[i+1]                                     // Current value will now be the next value
                         storesInfo[i+1] = auxVar                                            // Use auxVar that contains previous value of current value
                         swaps = true
+                        print("Swaps can still occur")
                     }
                 }
             }
         }
+        print("No more swaps")
         
-        print("Final value of storesInfo is:\n")
+        print("Final value of storesInfo AFTER SORTING is:\n")
         for stores in storesInfo {
             print(stores)
         }
